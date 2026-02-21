@@ -1,17 +1,19 @@
-import { useProviders } from './hooks/useProviders'
+import { useState } from 'react'
+import RatingStars from './components/RatingStars'
+import ErrorMessage from './components/ErrorMessage'
+import LoadingSkeleton from './components/LoadingSkeleton'
+import SearchBar from './components/SearchBar'
 
 function App() {
-
-   const { providers, loading, error } = useProviders()
-
-  console.log('loading:', loading)
-  console.log('providers:', providers)
-  console.log('error:', error)
+  const [search, setSearch] = useState('')
 
   return (
-      <div className='text-center my-20 text-5xl text-blue-300'>
-       {loading ? 'Loading...' : ` ${providers.length} providers loaded!`}
-      </div>
+    <div className="p-8 flex flex-col gap-8 max-w-xl mx-auto">
+      <RatingStars rating={4.5} showValue={true} />
+      <ErrorMessage message="Provider not found" />
+      <LoadingSkeleton />
+      <SearchBar value={search} onChange={setSearch} />
+    </div>
   )
 }
 
