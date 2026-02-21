@@ -1,9 +1,16 @@
+import { useProviders } from './hooks/useProviders'
 
 function App() {
 
+   const { providers, loading, error } = useProviders()
+
+  console.log('loading:', loading)
+  console.log('providers:', providers)
+  console.log('error:', error)
+
   return (
-      <div>
-      <h1 className='text-center my-20 text-5xl text-blue-300'>Project Setup using React + Vite + tailwindcss</h1>
+      <div className='text-center my-20 text-5xl text-blue-300'>
+       {loading ? 'Loading...' : ` ${providers.length} providers loaded!`}
       </div>
   )
 }
