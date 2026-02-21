@@ -14,6 +14,27 @@
   --color-success: #22c55e;
 
   --font-sans: 'Inter', sans-serif;
-
 }
 
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-content-primary);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+@keyframes pulse-skeleton {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.skeleton-pulse {
+  animation: pulse-skeleton 1.5s ease-in-out infinite;
+}
