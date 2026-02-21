@@ -1,16 +1,117 @@
-# React + Vite
+# Habot Connect — Learning Support Provider Directory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React application that allows parents to browse and find learning support providers for children with learning difficulties across the UAE.
 
-Currently, two official plugins are available:
+Built as part of the Habot Connect DMCC pre-interview project assignment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> https://project-directory-seven.vercel.app/providers
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React 18 | UI library |
+| Vite | Build tool & dev server |
+| Tailwind CSS v4 | Styling |
+| React Router v6 | Client-side routing |
+| Lucide React | Icons |
+
+---
+
+## Features
+
+- Browse a directory of 7 learning support providers
+- Search and filter providers by name or specialization in real time
+- View detailed information for each provider
+- Simulated async API data fetching with loading skeletons
+- Error handling for invalid provider IDs
+- Fully responsive across mobile, tablet, and desktop
+- CSS custom properties for consistent theming
+
+---
+
+## Project Structure
+```
+src/
+├── components/
+│   ├── Navbar.jsx           # Sticky top navigation bar
+│   ├── ProviderCard.jsx     # Provider summary card
+│   ├── SearchBar.jsx        # Search/filter input
+│   ├── RatingStars.jsx      # Reusable star rating display
+│   ├── LoadingSkeleton.jsx  # Skeleton loader for loading state
+│   └── ErrorMessage.jsx     # Error display with retry option
+├── pages/
+│   ├── ProviderListPage.jsx    # /providers — listing page
+│   └── ProviderDetailPage.jsx  # /providers/:id — detail page
+├── hooks/
+│   └── useProviders.js      # Custom hooks for data fetching simulation
+├── data/
+│   └── providers.json       # Dummy provider data
+├── App.jsx                  # Root component with routing setup
+├── main.jsx                 # React DOM entry point
+└── index.css                # Global styles and CSS variables
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js v18 or higher
+- npm v9 or higher
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/provider-directory.git
+cd provider-directory
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and visit:
+```
+http://localhost:5173
+```
+
+---
+
+## Available Scripts
+
+| Script | Description |
+|---|---|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+
+---
+
+## Design Decisions
+
+- **Bottom-up component development** — Built reusable components first, then composed them into pages for clean separation of concerns
+- **Custom hooks** — `useProviders` and `useProviderById` simulate real async API calls with loading and error states
+- **CSS custom properties** — All colors, typography, shadows and radii defined as variables in `index.css` for easy global theming
+- **useMemo for filtering** — Search filter uses `useMemo` to avoid unnecessary recomputation on every render
+- **Error boundaries** — Invalid provider IDs show a friendly error state instead of crashing
+
+---
+
+## Author
+
+Nihal Gavandi
