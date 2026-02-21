@@ -1,9 +1,6 @@
-# Habot Connect — Learning Support Provider Directory
+# Learning Support Provider Directory
 
 A responsive React application that allows parents to browse and find learning support providers for children with learning difficulties across the UAE.
-
-Built as part of the Habot Connect DMCC pre-interview project assignment.
-
 ---
 
 ## Live Demo
@@ -106,7 +103,6 @@ http://localhost:5173
 
 - **Bottom-up component development** — Built reusable components first, then composed them into pages for clean separation of concerns
 - **Custom hooks** — `useProviders` and `useProviderById` simulate real async API calls with loading and error states
-- **CSS custom properties** — All colors, typography, shadows and radii defined as variables in `index.css` for easy global theming
 - **useMemo for filtering** — Search filter uses `useMemo` to avoid unnecessary recomputation on every render
 - **Error boundaries** — Invalid provider IDs show a friendly error state instead of crashing
 
