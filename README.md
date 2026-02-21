@@ -5,7 +5,7 @@ A responsive React application that allows parents to browse and find learning s
 
 ## Live Demo
 
-> https://project-directory-seven.vercel.app/providers
+> https://project-directory-seven.vercel.app
 
 ---
 
